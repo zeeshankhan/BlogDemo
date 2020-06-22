@@ -1,68 +1,57 @@
 import UIKit
 import Foundation
-import RxSwift
-import RxCocoa
 
 class BottomTextFieldDemoVC: UIViewController {
 
-    let disposeBag = DisposeBag()
+    private var keyboardHeightConstraint: NSLayoutConstraint!
+    private let bottomPadding: CGFloat = 20
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-    }
 
-    private func setupUI() {
         title = "Bottom TextField"
         view.backgroundColor = .white
 
-        let commentTextField = UITextField()
-        commentTextField.placeholder = "Please enter comments..."
-        commentTextField.delegate = self
-        view.addSubview(commentTextField)
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "Please enter comments..."
+        textField.delegate = self
+        view.addSubview(textField)
 
-        commentTextField.translatesAutoresizingMaskIntoConstraints = false
-        let keyboardHeightConstraint: NSLayoutConstraint = commentTextField
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        keyboardHeightConstraint = textField
             .bottomAnchor
-            .constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -20)
+            .constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: -bottomPadding)
 
         NSLayoutConstraint.activate([
-            commentTextField.heightAnchor.constraint(equalToConstant: 48),
-            commentTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            commentTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            textField.heightAnchor.constraint(equalToConstant: 48),
+            textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             keyboardHeightConstraint,
         ])
-
 
         /// Constrain input to the bottom of the view with dependency on keyboard
         let keyboardLayoutGuide = UILayoutGuide()
         view.addLayoutGuide(keyboardLayoutGuide)
         
-        NotificationCenter.default.rx
-            .keyboardHeight
-            .subscribe(onNext: { [unowned self] notification in
-                let height = max(0, notification.height - self.view.safeAreaInsets.bottom)
-                keyboardHeightConstraint.constant = -height
-                UIView.animate(withDuration: notification.animationDuration, animations: { [unowned self] in
-                    self.view.layoutIfNeeded()
-                })
-            })
-            .disposed(by: disposeBag)
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(handleNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
+        nc.addObserver(self, selector: #selector(handleNotification), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        nc.addObserver(self, selector: #selector(handleNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-}
+        
+    @objc private func handleNotification(notification: Notification) {
+        guard let info = notification.keyboardAnimationInfo() else { return }
 
-public typealias KeyboardHeightNotification = (animationDuration: TimeInterval, height: CGFloat)
-
-extension Notification {
-    func keyboardAnimationInfo() -> KeyboardHeightNotification? {
-        guard let animationDuration: TimeInterval = (userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return nil }
-
-        guard let height = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else {
-            return nil
+        let height = max(bottomPadding, info.height - view.safeAreaInsets.bottom + bottomPadding)
+        keyboardHeightConstraint.constant = -height
+        UIView.animate(withDuration: info.animationDuration) {
+            self.view.layoutIfNeeded()
         }
+    }
 
-        return (animationDuration, height)
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -73,31 +62,18 @@ extension BottomTextFieldDemoVC: UITextFieldDelegate {
     }
 }
 
-// MARK: - Keyboard related extension
-extension Reactive where Base: NotificationCenter {
-    
-    /// Observable for the change of keyboard height that will be always on the main thread
-    public var keyboardHeight: Observable<KeyboardHeightNotification> {
-        return Observable.merge([
-            notification(UIResponder.keyboardWillShowNotification).keyboardAnimationInfo(),
-            notification(UIResponder.keyboardWillChangeFrameNotification).keyboardAnimationInfo(),
-            notification(UIResponder.keyboardWillHideNotification).keyboardAnimationInfo().map({ ($0.animationDuration, 0.0) })
-        ])
-            .observeOn(MainScheduler.instance)
-    }
-}
-
-extension ObservableType where Element == Notification {
-    func keyboardAnimationInfo() -> Observable<KeyboardHeightNotification> {
-        return map { notification -> KeyboardHeightNotification? in
-            guard let animationDuration: TimeInterval = (notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return nil }
-            
-            guard let height = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else {
-                return nil
-            }
-            
-            return (animationDuration, height)
+extension Notification {
+    func keyboardAnimationInfo() -> (animationDuration: TimeInterval, height: CGFloat)? {
+        guard name != UIResponder.keyboardWillHideNotification else {
+            return (0.0, 0)
         }
-        .filter { $0 != nil }.map { $0! }
+
+        guard let animationDuration: TimeInterval = (userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return nil }
+
+        guard let height = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else {
+            return nil
+        }
+
+        return (animationDuration, height)
     }
 }
