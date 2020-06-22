@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
 
-        window.rootViewController = DemoListViewController()
+        window.rootViewController = UINavigationController(rootViewController: DemoListViewController())
 
         return true
     }
