@@ -22,7 +22,7 @@ class DemoListViewController: UIViewController {
         bindViewModels()
         setupUI()
     }
-    
+
     private func setupUI() {
         view.backgroundColor = .white
         title = "Demo List"
@@ -34,8 +34,8 @@ class DemoListViewController: UIViewController {
     private func bindViewModels() {
         let items = [
             "Keyboard handling with bottom Text Field",
-            "Without Redux",
-            "With Redux",
+            "Show Toast",
+            "Hide",
         ]
         Observable<[String]>
             .just(items)
@@ -51,7 +51,10 @@ extension DemoListViewController: UITableViewDelegate {
         switch indexPath.row {
             case 0:
                 navigationController?.pushViewController(BottomTextFieldDemoVC(), animated: true)
+            case 1:
+                Toast.shared.show(text: "This is a good toast")
             default:
+                Toast.shared.hide()
                 return
         }
     }
