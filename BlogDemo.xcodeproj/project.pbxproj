@@ -16,6 +16,7 @@
 		D0E1A090249C6BEE002F4670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E1A08F249C6BEE002F4670 /* Assets.xcassets */; };
 		D0E1A093249C6BEE002F4670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E1A091249C6BEE002F4670 /* LaunchScreen.storyboard */; };
 		D0E1A0A9249C73EF002F4670 /* DemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1A0A8249C73EF002F4670 /* DemoListViewController.swift */; };
+		D0E8711C24A61E1C0001861C /* Cartography in Frameworks */ = {isa = PBXBuildFile; productRef = D0E8711B24A61E1C0001861C /* Cartography */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 				D0AE3C8F249F0CA200C1DBFF /* Differentiator in Frameworks */,
 				D0AE3C8D249F0CA200C1DBFF /* RxDataSources in Frameworks */,
 				D0AE3C95249F13A400C1DBFF /* TinyConstraints in Frameworks */,
+				D0E8711C24A61E1C0001861C /* Cartography in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +103,7 @@
 				D0AE3C8C249F0CA200C1DBFF /* RxDataSources */,
 				D0AE3C8E249F0CA200C1DBFF /* Differentiator */,
 				D0AE3C94249F13A400C1DBFF /* TinyConstraints */,
+				D0E8711B24A61E1C0001861C /* Cartography */,
 			);
 			productName = BlogDemo;
 			productReference = D0E1A083249C6BEB002F4670 /* BlogDemo.app */;
@@ -133,6 +136,7 @@
 			packageReferences = (
 				D0AE3C8B249F0CA200C1DBFF /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				D0AE3C93249F13A400C1DBFF /* XCRemoteSwiftPackageReference "TinyConstraints" */,
+				D0E8711A24A61E1C0001861C /* XCRemoteSwiftPackageReference "Cartography" */,
 			);
 			productRefGroup = D0E1A084249C6BEB002F4670 /* Products */;
 			projectDirPath = "";
@@ -372,6 +376,14 @@
 				minimumVersion = 4.0.1;
 			};
 		};
+		D0E8711A24A61E1C0001861C /* XCRemoteSwiftPackageReference "Cartography" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/robb/Cartography";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -389,6 +401,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D0AE3C93249F13A400C1DBFF /* XCRemoteSwiftPackageReference "TinyConstraints" */;
 			productName = TinyConstraints;
+		};
+		D0E8711B24A61E1C0001861C /* Cartography */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0E8711A24A61E1C0001861C /* XCRemoteSwiftPackageReference "Cartography" */;
+			productName = Cartography;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

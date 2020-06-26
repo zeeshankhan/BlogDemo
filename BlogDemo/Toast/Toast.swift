@@ -1,4 +1,5 @@
 import UIKit
+import Cartography
 
 public final class Toast {
 
@@ -15,28 +16,26 @@ public final class Toast {
         label.font = Constants.font
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private lazy var toastView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(toastLabel)
-        NSLayoutConstraint.activate([
-            toastLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.textSidePadding),
-            toastLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.textSidePadding),
-            toastLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.textBottomPadding)
-        ])
+        constrain(view, toastLabel) { view, label in
+            label.leading == view.leading + Constants.textSidePadding
+            label.trailing == view.trailing - Constants.textSidePadding
+            label.bottom == view.bottom - Constants.textBottomPadding
+        }
         return view
     }()
-    
+
     private var toastWindow: UIWindow?
     static public let shared = Toast()
     private init() {}
 
     public func show(text: String, backgroundColor: UIColor = .red, textColor: UIColor = .white) {
-        
+
         /// Hide old
         toastWindow = nil
 
@@ -61,7 +60,7 @@ public final class Toast {
             self.toastWindow = nil
         })
     }
-    
+
     private func setupUI(text: String, backgroundColor: UIColor, textColor: UIColor) -> UIWindow {
         toastLabel.text = text
         toastLabel.textColor = textColor
@@ -73,12 +72,9 @@ public final class Toast {
         window.isHidden = false
 
         window.addSubview(toastView)
-        NSLayoutConstraint.activate([
-            toastView.topAnchor.constraint(equalTo: window.topAnchor),
-            toastView.leadingAnchor.constraint(equalTo: window.leadingAnchor),
-            toastView.bottomAnchor.constraint(equalTo: window.bottomAnchor),
-            toastView.trailingAnchor.constraint(equalTo: window.trailingAnchor)
-        ])
+        constrain(window, toastView) { window, view in
+            view.edges == window.edges
+        }
 
         let viewHeight = height(for: text) + window.safeAreaInsets.top + Constants.textBottomPadding
         window.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: viewHeight)
