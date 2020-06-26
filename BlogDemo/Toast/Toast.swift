@@ -9,10 +9,31 @@ public final class Toast {
         static let textBottomPadding: CGFloat = 8
     }
 
+    private lazy var toastLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = Constants.font
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var toastView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(toastLabel)
+        NSLayoutConstraint.activate([
+            toastLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.textSidePadding),
+            toastLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.textSidePadding),
+            toastLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.textBottomPadding)
+        ])
+        return view
+    }()
+    
+    private var toastWindow: UIWindow?
     static public let shared = Toast()
     private init() {}
-
-    private var toastWindow: UIWindow?
 
     public func show(text: String, backgroundColor: UIColor = .red, textColor: UIColor = .white) {
         
@@ -31,7 +52,6 @@ public final class Toast {
     }
 
     public func hide() {
-
         guard let window = toastWindow else { return }
 
         UIView.animate(withDuration: Constants.animationDuration, delay: 0, options: .curveEaseIn, animations: {
@@ -43,53 +63,34 @@ public final class Toast {
     }
     
     private func setupUI(text: String, backgroundColor: UIColor, textColor: UIColor) -> UIWindow {
-        let view = UIView()
-        view.backgroundColor = backgroundColor
-        view.translatesAutoresizingMaskIntoConstraints = false
+        toastLabel.text = text
+        toastLabel.textColor = textColor
+        toastLabel.backgroundColor = backgroundColor
+        toastView.backgroundColor = backgroundColor
 
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.backgroundColor = backgroundColor
-        label.textColor = textColor
-        label.font = Constants.font
-        label.lineBreakMode = .byWordWrapping
-        label.textAlignment = .center
-        label.text = text
-        label.translatesAutoresizingMaskIntoConstraints = false
-
-        view.addSubview(label)
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.textSidePadding),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.textSidePadding),
-            label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Constants.textBottomPadding)
-        ])
-        
         let window = UIWindow()
         window.backgroundColor = backgroundColor
         window.isHidden = false
-        
-        window.addSubview(view)
+
+        window.addSubview(toastView)
         NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: window.topAnchor),
-            view.leadingAnchor.constraint(equalTo: window.leadingAnchor),
-            view.bottomAnchor.constraint(equalTo: window.bottomAnchor),
-            view.trailingAnchor.constraint(equalTo: window.trailingAnchor)
+            toastView.topAnchor.constraint(equalTo: window.topAnchor),
+            toastView.leadingAnchor.constraint(equalTo: window.leadingAnchor),
+            toastView.bottomAnchor.constraint(equalTo: window.bottomAnchor),
+            toastView.trailingAnchor.constraint(equalTo: window.trailingAnchor)
         ])
-        
+
         let viewHeight = height(for: text) + window.safeAreaInsets.top + Constants.textBottomPadding
         window.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: viewHeight)
-
         return window
     }
 
     private func height(for text: String) -> CGFloat {
         let width = UIScreen.main.bounds.width - (Constants.textSidePadding * 2)
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = text.boundingRect(with: constraintRect,
+        let boundingBox = text.boundingRect(with: CGSize(width: width, height: .greatestFiniteMagnitude),
                                             options: .usesLineFragmentOrigin,
                                             attributes: [.font: Constants.font],
                                             context: nil)
-        let textHeight = ceil(boundingBox.height)
-        return textHeight
+        return ceil(boundingBox.height)
     }
 }
