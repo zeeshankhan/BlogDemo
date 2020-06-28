@@ -33,7 +33,8 @@ class DemoListViewController: UIViewController {
 
     private func bindViewModels() {
         let items = [
-            "Keyboard handling with bottom Text Field",
+            "Bottom UITextField Keyboard Handling",
+            "Bottom UITextField with UILayoutGuide",
             "Show Toast",
             "Hide",
         ]
@@ -52,6 +53,8 @@ extension DemoListViewController: UITableViewDelegate {
             case 0:
                 navigationController?.pushViewController(BottomTextFieldDemoVC(), animated: true)
             case 1:
+                navigationController?.pushViewController(BottomTextFieldDemo2VC(), animated: true)
+            case 2:
                 Toast.shared.show(text: "This is a good toast")
             default:
                 Toast.shared.hide()
