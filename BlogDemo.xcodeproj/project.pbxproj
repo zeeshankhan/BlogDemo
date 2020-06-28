@@ -7,29 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D02D915824A2F3500005E884 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D915624A2F3500005E884 /* Toast.swift */; };
 		D0AE3C8D249F0CA200C1DBFF /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8C249F0CA200C1DBFF /* RxDataSources */; };
 		D0AE3C8F249F0CA200C1DBFF /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8E249F0CA200C1DBFF /* Differentiator */; };
 		D0AE3C95249F13A400C1DBFF /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C94249F13A400C1DBFF /* TinyConstraints */; };
-		D0AE3C97249F146100C1DBFF /* BottomTextFieldDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AE3C96249F146100C1DBFF /* BottomTextFieldDemoVC.swift */; };
-		D0C9DCDA24A89088006CEFD3 /* BottomTextFieldDemo2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCD924A89088006CEFD3 /* BottomTextFieldDemo2VC.swift */; };
+		D0C9DCDD24A892CC006CEFD3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D0C9DCDC24A892CC006CEFD3 /* RxSwift */; };
+		D0C9DCDF24A892CC006CEFD3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D0C9DCDE24A892CC006CEFD3 /* RxCocoa */; };
+		D0C9DCE624A8934F006CEFD3 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCE124A8934F006CEFD3 /* Toast.swift */; };
+		D0C9DCE724A8934F006CEFD3 /* BottomTextFieldDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCE324A8934F006CEFD3 /* BottomTextFieldDemoVC.swift */; };
+		D0C9DCE824A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */; };
+		D0C9DCE924A8934F006CEFD3 /* DemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCE524A8934F006CEFD3 /* DemoListViewController.swift */; };
+		D0C9DCF124A8A804006CEFD3 /* Notification++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCF024A8A804006CEFD3 /* Notification++.swift */; };
 		D0E1A087249C6BEB002F4670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1A086249C6BEB002F4670 /* AppDelegate.swift */; };
 		D0E1A090249C6BEE002F4670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E1A08F249C6BEE002F4670 /* Assets.xcassets */; };
 		D0E1A093249C6BEE002F4670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E1A091249C6BEE002F4670 /* LaunchScreen.storyboard */; };
-		D0E1A0A9249C73EF002F4670 /* DemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1A0A8249C73EF002F4670 /* DemoListViewController.swift */; };
 		D0E8711C24A61E1C0001861C /* Cartography in Frameworks */ = {isa = PBXBuildFile; productRef = D0E8711B24A61E1C0001861C /* Cartography */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D02D915624A2F3500005E884 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		D0AE3C96249F146100C1DBFF /* BottomTextFieldDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemoVC.swift; sourceTree = "<group>"; };
-		D0C9DCD924A89088006CEFD3 /* BottomTextFieldDemo2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemo2VC.swift; sourceTree = "<group>"; };
+		D0C9DCE124A8934F006CEFD3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		D0C9DCE324A8934F006CEFD3 /* BottomTextFieldDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemoVC.swift; sourceTree = "<group>"; };
+		D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemo2VC.swift; sourceTree = "<group>"; };
+		D0C9DCE524A8934F006CEFD3 /* DemoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoListViewController.swift; sourceTree = "<group>"; };
+		D0C9DCF024A8A804006CEFD3 /* Notification++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification++.swift"; sourceTree = "<group>"; };
 		D0E1A083249C6BEB002F4670 /* BlogDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E1A086249C6BEB002F4670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0E1A08F249C6BEE002F4670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0E1A092249C6BEE002F4670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0E1A094249C6BEE002F4670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0E1A0A8249C73EF002F4670 /* DemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,8 +41,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C9DCDF24A892CC006CEFD3 /* RxCocoa in Frameworks */,
 				D0AE3C8F249F0CA200C1DBFF /* Differentiator in Frameworks */,
 				D0AE3C8D249F0CA200C1DBFF /* RxDataSources in Frameworks */,
+				D0C9DCDD24A892CC006CEFD3 /* RxSwift in Frameworks */,
 				D0AE3C95249F13A400C1DBFF /* TinyConstraints in Frameworks */,
 				D0E8711C24A61E1C0001861C /* Cartography in Frameworks */,
 			);
@@ -47,12 +53,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D02D915424A2F3500005E884 /* Toast */ = {
+		D0C9DCE024A8934F006CEFD3 /* Toolbox */ = {
 			isa = PBXGroup;
 			children = (
-				D02D915624A2F3500005E884 /* Toast.swift */,
+				D0C9DCEF24A8A7E8006CEFD3 /* Extension */,
+				D0C9DCE124A8934F006CEFD3 /* Toast.swift */,
 			);
-			path = Toast;
+			path = Toolbox;
+			sourceTree = "<group>";
+		};
+		D0C9DCE224A8934F006CEFD3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0C9DCE524A8934F006CEFD3 /* DemoListViewController.swift */,
+				D0C9DCE324A8934F006CEFD3 /* BottomTextFieldDemoVC.swift */,
+				D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D0C9DCEF24A8A7E8006CEFD3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0C9DCF024A8A804006CEFD3 /* Notification++.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D0E1A07A249C6BEB002F4670 = {
@@ -75,13 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				D0E1A086249C6BEB002F4670 /* AppDelegate.swift */,
-				D0E1A0A8249C73EF002F4670 /* DemoListViewController.swift */,
 				D0E1A08F249C6BEE002F4670 /* Assets.xcassets */,
 				D0E1A091249C6BEE002F4670 /* LaunchScreen.storyboard */,
 				D0E1A094249C6BEE002F4670 /* Info.plist */,
-				D0AE3C96249F146100C1DBFF /* BottomTextFieldDemoVC.swift */,
-				D0C9DCD924A89088006CEFD3 /* BottomTextFieldDemo2VC.swift */,
-				D02D915424A2F3500005E884 /* Toast */,
+				D0C9DCE224A8934F006CEFD3 /* ViewControllers */,
+				D0C9DCE024A8934F006CEFD3 /* Toolbox */,
 			);
 			path = BlogDemo;
 			sourceTree = "<group>";
@@ -107,6 +130,8 @@
 				D0AE3C8E249F0CA200C1DBFF /* Differentiator */,
 				D0AE3C94249F13A400C1DBFF /* TinyConstraints */,
 				D0E8711B24A61E1C0001861C /* Cartography */,
+				D0C9DCDC24A892CC006CEFD3 /* RxSwift */,
+				D0C9DCDE24A892CC006CEFD3 /* RxCocoa */,
 			);
 			productName = BlogDemo;
 			productReference = D0E1A083249C6BEB002F4670 /* BlogDemo.app */;
@@ -140,6 +165,7 @@
 				D0AE3C8B249F0CA200C1DBFF /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				D0AE3C93249F13A400C1DBFF /* XCRemoteSwiftPackageReference "TinyConstraints" */,
 				D0E8711A24A61E1C0001861C /* XCRemoteSwiftPackageReference "Cartography" */,
+				D0C9DCDB24A892CC006CEFD3 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = D0E1A084249C6BEB002F4670 /* Products */;
 			projectDirPath = "";
@@ -168,10 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E1A087249C6BEB002F4670 /* AppDelegate.swift in Sources */,
-				D02D915824A2F3500005E884 /* Toast.swift in Sources */,
-				D0C9DCDA24A89088006CEFD3 /* BottomTextFieldDemo2VC.swift in Sources */,
-				D0E1A0A9249C73EF002F4670 /* DemoListViewController.swift in Sources */,
-				D0AE3C97249F146100C1DBFF /* BottomTextFieldDemoVC.swift in Sources */,
+				D0C9DCE924A8934F006CEFD3 /* DemoListViewController.swift in Sources */,
+				D0C9DCF124A8A804006CEFD3 /* Notification++.swift in Sources */,
+				D0C9DCE824A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift in Sources */,
+				D0C9DCE624A8934F006CEFD3 /* Toast.swift in Sources */,
+				D0C9DCE724A8934F006CEFD3 /* BottomTextFieldDemoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +407,14 @@
 				minimumVersion = 4.0.1;
 			};
 		};
+		D0C9DCDB24A892CC006CEFD3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		D0E8711A24A61E1C0001861C /* XCRemoteSwiftPackageReference "Cartography" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/robb/Cartography";
@@ -405,6 +440,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D0AE3C93249F13A400C1DBFF /* XCRemoteSwiftPackageReference "TinyConstraints" */;
 			productName = TinyConstraints;
+		};
+		D0C9DCDC24A892CC006CEFD3 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0C9DCDB24A892CC006CEFD3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		D0C9DCDE24A892CC006CEFD3 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0C9DCDB24A892CC006CEFD3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 		D0E8711B24A61E1C0001861C /* Cartography */ = {
 			isa = XCSwiftPackageProductDependency;

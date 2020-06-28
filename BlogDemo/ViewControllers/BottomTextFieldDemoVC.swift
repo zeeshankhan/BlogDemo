@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-class BottomTextFieldDemoVC: UIViewController {
+class BottomTextFieldDemoVC: UIViewController, UITextFieldDelegate {
 
     private var keyboardHeightConstraint: NSLayoutConstraint!
     private let bottomPadding: CGFloat = 20
@@ -53,27 +53,9 @@ class BottomTextFieldDemoVC: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-}
 
-extension BottomTextFieldDemoVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         return false
-    }
-}
-
-extension Notification {
-    func keyboardAnimationInfo() -> (animationDuration: TimeInterval, height: CGFloat)? {
-        guard name != UIResponder.keyboardWillHideNotification else {
-            return (0.0, 0)
-        }
-
-        guard let animationDuration: TimeInterval = (userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return nil }
-
-        guard let height = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height else {
-            return nil
-        }
-
-        return (animationDuration, height)
     }
 }
