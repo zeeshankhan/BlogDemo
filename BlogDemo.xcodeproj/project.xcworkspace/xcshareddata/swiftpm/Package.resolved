@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Action",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/Action",
+        "state": {
+          "branch": null,
+          "revision": "1079e557787a3ffe88f833eb5f637dcf1396421b",
+          "version": "4.1.0"
+        }
+      },
+      {
         "package": "Cartography",
         "repositoryURL": "https://github.com/robb/Cartography",
         "state": {

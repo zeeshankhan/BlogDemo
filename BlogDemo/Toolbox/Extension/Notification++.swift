@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import RxSwift
 
 extension Notification {
     public func keyboardAnimationInfo() -> (animationDuration: TimeInterval, height: CGFloat)? {
