@@ -25,7 +25,7 @@ class DemoListViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
-        title = "Demo List"
+        title = "Demo"
 
         view.addSubview(listTableView)
         listTableView.edgesToSuperview()

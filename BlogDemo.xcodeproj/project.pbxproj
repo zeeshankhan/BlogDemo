@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D015D38824AB158000E9839B /* Rx++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015D38724AB158000E9839B /* Rx++.swift */; };
 		D0AE3C8D249F0CA200C1DBFF /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8C249F0CA200C1DBFF /* RxDataSources */; };
 		D0AE3C8F249F0CA200C1DBFF /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8E249F0CA200C1DBFF /* Differentiator */; };
 		D0AE3C95249F13A400C1DBFF /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C94249F13A400C1DBFF /* TinyConstraints */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D015D38724AB158000E9839B /* Rx++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx++.swift"; sourceTree = "<group>"; };
 		D0C9DCE124A8934F006CEFD3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		D0C9DCE324A8934F006CEFD3 /* BottomTextFieldDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemoVC.swift; sourceTree = "<group>"; };
 		D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemo2VC.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C9DCF024A8A804006CEFD3 /* Notification++.swift */,
+				D015D38724AB158000E9839B /* Rx++.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				D0E1A087249C6BEB002F4670 /* AppDelegate.swift in Sources */,
 				D0E8CAA624A995F300A94935 /* FeedbackCell.swift in Sources */,
 				D0C9DCE924A8934F006CEFD3 /* DemoListViewController.swift in Sources */,
+				D015D38824AB158000E9839B /* Rx++.swift in Sources */,
 				D0E8CAA724A995F300A94935 /* FeedbackViewController.swift in Sources */,
 				D0E8CAA524A995F300A94935 /* FeedbackSection.swift in Sources */,
 				D0C9DCF124A8A804006CEFD3 /* Notification++.swift in Sources */,

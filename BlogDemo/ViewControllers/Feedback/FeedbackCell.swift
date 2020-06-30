@@ -19,14 +19,9 @@ final class FeedbackCell: UITableViewCell {
     private func setupUI() {
         
         titleLabel.numberOfLines = 0
-        titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
         titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.textAlignment = .natural
         
-        let backgroundColorView = UIView()
-        backgroundColorView.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        selectedBackgroundView = backgroundColorView
-
         titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         contentView.addSubview(icon)
         contentView.addSubview(titleLabel)
@@ -45,7 +40,7 @@ final class FeedbackCell: UITableViewCell {
     }
 
     func populateCell(_ cellModel: FeedbackCellModel) {
-        titleLabel.text = cellModel.reason.description
+        titleLabel.text = cellModel.reason.title
         let imageName = cellModel.isSelected ? "checkmark.circle.fill" : "circle"
         icon.image = UIImage(systemName: imageName)
     }

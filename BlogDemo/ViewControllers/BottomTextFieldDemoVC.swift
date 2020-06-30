@@ -30,10 +30,6 @@ class BottomTextFieldDemoVC: UIViewController, UITextFieldDelegate {
             keyboardHeightConstraint,
         ])
 
-        /// Constrain input to the bottom of the view with dependency on keyboard
-        let keyboardLayoutGuide = UILayoutGuide()
-        view.addLayoutGuide(keyboardLayoutGuide)
-        
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(handleNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
         nc.addObserver(self, selector: #selector(handleNotification), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
@@ -41,7 +37,7 @@ class BottomTextFieldDemoVC: UIViewController, UITextFieldDelegate {
     }
         
     @objc private func handleNotification(notification: Notification) {
-        guard let info = notification.keyboardAnimationInfo() else { return }
+        guard let info = notification.keyboardInfo else { return }
 
         let height = max(bottomPadding, info.height - view.safeAreaInsets.bottom + bottomPadding)
         keyboardHeightConstraint.constant = -height

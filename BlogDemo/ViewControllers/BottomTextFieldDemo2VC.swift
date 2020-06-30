@@ -44,7 +44,7 @@ class BottomTextFieldDemo2VC: UIViewController, UITextFieldDelegate {
     }
         
     @objc private func handleNotification(notification: Notification) {
-        guard let info = notification.keyboardAnimationInfo() else { return }
+        guard let info = notification.keyboardInfo else { return }
 
         let height = max(0, info.height - view.safeAreaInsets.bottom)
         keyboardHeightConstraint.constant = -height
