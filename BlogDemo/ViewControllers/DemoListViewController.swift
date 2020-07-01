@@ -38,7 +38,7 @@ class DemoListViewController: UIViewController {
             "Bottom UITextField Keyboard Handling",
             "Bottom UITextField with UILayoutGuide",
             "Feedback form without REDUX",
-            "Feedback form with REDUX",
+            "Anchor Points",
         ]
         Observable<[String]>
             .just(items)
@@ -62,6 +62,8 @@ extension DemoListViewController: UITableViewDelegate {
                 navigationController?.pushViewController(BottomTextFieldDemo2VC(), animated: true)
             case 4:
                 navigationController?.pushViewController(FeedbackViewController(), animated: true)
+            case 5:
+                present(AnchorPointsVC(nibName: "AnchorPointsVC", bundle: nil), animated: true, completion: nil)
             default:
                 return
         }

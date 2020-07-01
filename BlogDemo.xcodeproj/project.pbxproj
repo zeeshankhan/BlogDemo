@@ -11,6 +11,8 @@
 		D0AE3C8D249F0CA200C1DBFF /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8C249F0CA200C1DBFF /* RxDataSources */; };
 		D0AE3C8F249F0CA200C1DBFF /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8E249F0CA200C1DBFF /* Differentiator */; };
 		D0AE3C95249F13A400C1DBFF /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C94249F13A400C1DBFF /* TinyConstraints */; };
+		D0C62A2824AC573100FA99D1 /* AnchorPointsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C62A2624AC573100FA99D1 /* AnchorPointsVC.swift */; };
+		D0C62A2924AC573100FA99D1 /* AnchorPointsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C62A2724AC573100FA99D1 /* AnchorPointsVC.xib */; };
 		D0C9DCDD24A892CC006CEFD3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D0C9DCDC24A892CC006CEFD3 /* RxSwift */; };
 		D0C9DCDF24A892CC006CEFD3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D0C9DCDE24A892CC006CEFD3 /* RxCocoa */; };
 		D0C9DCE624A8934F006CEFD3 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCE124A8934F006CEFD3 /* Toast.swift */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		D015D38724AB158000E9839B /* Rx++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx++.swift"; sourceTree = "<group>"; };
+		D0C62A2624AC573100FA99D1 /* AnchorPointsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnchorPointsVC.swift; path = AnchorPoints/AnchorPointsVC.swift; sourceTree = "<group>"; };
+		D0C62A2724AC573100FA99D1 /* AnchorPointsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AnchorPointsVC.xib; path = AnchorPoints/AnchorPointsVC.xib; sourceTree = "<group>"; };
 		D0C9DCE124A8934F006CEFD3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		D0C9DCE324A8934F006CEFD3 /* BottomTextFieldDemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemoVC.swift; sourceTree = "<group>"; };
 		D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemo2VC.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				D0C9DCE524A8934F006CEFD3 /* DemoListViewController.swift */,
 				D0C9DCE324A8934F006CEFD3 /* BottomTextFieldDemoVC.swift */,
 				D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */,
+				D0C62A2624AC573100FA99D1 /* AnchorPointsVC.swift */,
+				D0C62A2724AC573100FA99D1 /* AnchorPointsVC.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -209,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0E1A093249C6BEE002F4670 /* LaunchScreen.storyboard in Resources */,
+				D0C62A2924AC573100FA99D1 /* AnchorPointsVC.xib in Resources */,
 				D0E1A090249C6BEE002F4670 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +235,7 @@
 				D0E8CAA524A995F300A94935 /* FeedbackSection.swift in Sources */,
 				D0C9DCF124A8A804006CEFD3 /* Notification++.swift in Sources */,
 				D0E8CAA424A995F300A94935 /* FeedbackViewModel.swift in Sources */,
+				D0C62A2824AC573100FA99D1 /* AnchorPointsVC.swift in Sources */,
 				D0C9DCE824A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift in Sources */,
 				D0C9DCE624A8934F006CEFD3 /* Toast.swift in Sources */,
 				D0C9DCE724A8934F006CEFD3 /* BottomTextFieldDemoVC.swift in Sources */,

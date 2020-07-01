@@ -8,6 +8,8 @@ public final class Toast {
         static let font: UIFont = .systemFont(ofSize: 13, weight: .medium)
         static let textSidePadding: CGFloat = 8
         static let textBottomPadding: CGFloat = 8
+        static let defaultAnchorY: CGFloat = 0.5
+        static let hiddenAnchorY: CGFloat = 1.5
     }
 
     private lazy var toastLabel: UILabel = {
@@ -44,9 +46,9 @@ public final class Toast {
         toastWindow = window
 
         /// Show new
-        window.transform = CGAffineTransform(translationX: 0, y: -window.frame.height)
+        window.layer.anchorPoint.y = Constants.hiddenAnchorY
         UIView.animate(withDuration: Constants.animationDuration, delay: 0, options: .curveEaseOut, animations: {
-            window.transform = .identity
+            window.layer.anchorPoint.y = Constants.defaultAnchorY
         }, completion: nil)
     }
 
@@ -54,9 +56,8 @@ public final class Toast {
         guard let window = toastWindow else { return }
 
         UIView.animate(withDuration: Constants.animationDuration, delay: 0, options: .curveEaseIn, animations: {
-            window.transform = CGAffineTransform(translationX: 0, y: -window.frame.height)
+            window.layer.anchorPoint.y = Constants.hiddenAnchorY
         }, completion: { _ in
-            self.toastWindow?.transform = .identity
             self.toastWindow = nil
         })
     }
