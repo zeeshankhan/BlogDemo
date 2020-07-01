@@ -28,11 +28,12 @@ public final class Toast {
             label.leading == view.leading + Constants.textSidePadding
             label.trailing == view.trailing - Constants.textSidePadding
             label.bottom == view.bottom - Constants.textBottomPadding
+            label.top == view.safeAreaLayoutGuide.top
         }
         return view
     }()
 
-    private var toastWindow: UIWindow?
+    private var toastWindow: ToastWindow?
     static public let shared = Toast()
     private init() {}
 
@@ -49,7 +50,7 @@ public final class Toast {
         window.layer.anchorPoint.y = Constants.hiddenAnchorY
         UIView.animate(withDuration: Constants.animationDuration, delay: 0, options: .curveEaseOut, animations: {
             window.layer.anchorPoint.y = Constants.defaultAnchorY
-        }, completion: nil)
+        })
     }
 
     public func hide() {
@@ -62,32 +63,30 @@ public final class Toast {
         })
     }
 
-    private func setupUI(text: String, backgroundColor: UIColor, textColor: UIColor) -> UIWindow {
+    private func setupUI(text: String, backgroundColor: UIColor, textColor: UIColor) -> ToastWindow {
         toastLabel.text = text
         toastLabel.textColor = textColor
         toastLabel.backgroundColor = backgroundColor
         toastView.backgroundColor = backgroundColor
 
-        let window = UIWindow()
-        window.backgroundColor = backgroundColor
+        let window = ToastWindow()
+        window.backgroundColor = .clear
         window.isHidden = false
-
         window.addSubview(toastView)
         constrain(window, toastView) { window, view in
-            view.edges == window.edges
+            view.top == window.top
+            view.leading == window.leading
+            view.trailing == window.trailing
         }
 
-        let viewHeight = height(for: text) + window.safeAreaInsets.top + Constants.textBottomPadding
-        window.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: viewHeight)
         return window
     }
+}
 
-    private func height(for text: String) -> CGFloat {
-        let width = UIScreen.main.bounds.width - (Constants.textSidePadding * 2)
-        let boundingBox = text.boundingRect(with: CGSize(width: width, height: .greatestFiniteMagnitude),
-                                            options: .usesLineFragmentOrigin,
-                                            attributes: [.font: Constants.font],
-                                            context: nil)
-        return ceil(boundingBox.height)
+private class ToastWindow: UIWindow {
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        guard view != self else { return nil }
+        return view
     }
 }
