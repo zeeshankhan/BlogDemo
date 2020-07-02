@@ -54,7 +54,7 @@ extension DemoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
             case 0:
-                Toast.shared.show(text: "This is a good toast")
+                Toast.shared.show(text: "Ea voluptatibus a illo doloremque reiciendis nemo et earum. Molestiae totam voluptatibus nobis et deleniti dolores. Animi quasi ut voluptatem autem magni. Et voluptas repudiandae unde. Non sapiente maxime voluptas et facere enim.")
             case 1:
                 Toast.shared.hide()
             case 2:

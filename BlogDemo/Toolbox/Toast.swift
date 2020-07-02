@@ -16,7 +16,6 @@ public final class Toast {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = Constants.font
-        label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
         return label
     }()
@@ -39,31 +38,32 @@ public final class Toast {
 
     public func show(text: String, backgroundColor: UIColor = .red, textColor: UIColor = .white) {
 
-        /// Hide old
+        /// Hide old window
         toastWindow = nil
 
-        /// Setup new
-        let window = setupUI(text: text, backgroundColor: backgroundColor, textColor: textColor)
-        toastWindow = window
+        /// Setup new window
+        setupUI(text: text, backgroundColor: backgroundColor, textColor: textColor)
 
-        /// Show new
-        window.layer.anchorPoint.y = Constants.hiddenAnchorY
+        /// Show the toast by animating view's anchor point
+        toastView.layer.anchorPoint.y = Constants.hiddenAnchorY
         UIView.animate(withDuration: Constants.animationDuration, delay: 0, options: .curveEaseOut, animations: {
-            window.layer.anchorPoint.y = Constants.defaultAnchorY
+            self.toastView.layer.anchorPoint.y = Constants.defaultAnchorY
         })
     }
 
     public func hide() {
-        guard let window = toastWindow else { return }
+        /// return if window is already nil
+        guard toastWindow != nil else { return }
 
+        /// Hide the toast by animating view's anchor point and then set nil to window to completely remove it
         UIView.animate(withDuration: Constants.animationDuration, delay: 0, options: .curveEaseIn, animations: {
-            window.layer.anchorPoint.y = Constants.hiddenAnchorY
+            self.toastView.layer.anchorPoint.y = Constants.hiddenAnchorY
         }, completion: { _ in
             self.toastWindow = nil
         })
     }
 
-    private func setupUI(text: String, backgroundColor: UIColor, textColor: UIColor) -> ToastWindow {
+    private func setupUI(text: String, backgroundColor: UIColor, textColor: UIColor) {
         toastLabel.text = text
         toastLabel.textColor = textColor
         toastLabel.backgroundColor = backgroundColor
@@ -78,8 +78,7 @@ public final class Toast {
             view.leading == window.leading
             view.trailing == window.trailing
         }
-
-        return window
+        toastWindow = window
     }
 }
 
