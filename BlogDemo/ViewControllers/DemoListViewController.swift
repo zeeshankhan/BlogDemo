@@ -35,10 +35,11 @@ class DemoListViewController: UIViewController {
         let items = [
             "Show Toast",
             "Hide Toast",
+            "Anchor Points",
             "Bottom UITextField Keyboard Handling",
             "Bottom UITextField with UILayoutGuide",
-            "Feedback form without REDUX",
-            "Anchor Points",
+            "Feedback form",
+            "Feedback form with REDUX",
         ]
         Observable<[String]>
             .just(items)
@@ -57,13 +58,15 @@ extension DemoListViewController: UITableViewDelegate {
             case 1:
                 Toast.shared.hide()
             case 2:
-                navigationController?.pushViewController(BottomTextFieldDemoVC(), animated: true)
-            case 3:
-                navigationController?.pushViewController(BottomTextFieldDemo2VC(), animated: true)
-            case 4:
-                navigationController?.pushViewController(FeedbackViewController(), animated: true)
-            case 5:
                 present(AnchorPointsVC(nibName: "AnchorPointsVC", bundle: nil), animated: true, completion: nil)
+            case 3:
+                navigationController?.pushViewController(BottomTextFieldDemoVC(), animated: true)
+            case 4:
+                navigationController?.pushViewController(BottomTextFieldDemo2VC(), animated: true)
+            case 5:
+                navigationController?.pushViewController(FeedbackViewController(), animated: true)
+            case 6:
+                navigationController?.pushViewController(FeedbackReduxViewController(), animated: true)
             default:
                 return
         }

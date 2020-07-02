@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D015D38824AB158000E9839B /* Rx++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015D38724AB158000E9839B /* Rx++.swift */; };
+		D01AA33E24AD867D00D6EF4E /* FeedbackReduxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AA33C24AD867D00D6EF4E /* FeedbackReduxViewModel.swift */; };
+		D01AA33F24AD867D00D6EF4E /* FeedbackReduxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AA33D24AD867D00D6EF4E /* FeedbackReduxViewController.swift */; };
 		D0AE3C8D249F0CA200C1DBFF /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8C249F0CA200C1DBFF /* RxDataSources */; };
 		D0AE3C8F249F0CA200C1DBFF /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8E249F0CA200C1DBFF /* Differentiator */; };
 		D0AE3C95249F13A400C1DBFF /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C94249F13A400C1DBFF /* TinyConstraints */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		D015D38724AB158000E9839B /* Rx++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx++.swift"; sourceTree = "<group>"; };
+		D01AA33C24AD867D00D6EF4E /* FeedbackReduxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackReduxViewModel.swift; sourceTree = "<group>"; };
+		D01AA33D24AD867D00D6EF4E /* FeedbackReduxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackReduxViewController.swift; sourceTree = "<group>"; };
 		D0C62A2624AC573100FA99D1 /* AnchorPointsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnchorPointsVC.swift; path = AnchorPoints/AnchorPointsVC.swift; sourceTree = "<group>"; };
 		D0C62A2724AC573100FA99D1 /* AnchorPointsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AnchorPointsVC.xib; path = AnchorPoints/AnchorPointsVC.xib; sourceTree = "<group>"; };
 		D0C9DCE124A8934F006CEFD3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				D0E8CAA124A995F300A94935 /* FeedbackSection.swift */,
 				D0E8CAA324A995F300A94935 /* FeedbackViewController.swift */,
 				D0E8CAA024A995F300A94935 /* FeedbackViewModel.swift */,
+				D01AA33D24AD867D00D6EF4E /* FeedbackReduxViewController.swift */,
+				D01AA33C24AD867D00D6EF4E /* FeedbackReduxViewModel.swift */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -229,7 +235,9 @@
 			files = (
 				D0E1A087249C6BEB002F4670 /* AppDelegate.swift in Sources */,
 				D0E8CAA624A995F300A94935 /* FeedbackCell.swift in Sources */,
+				D01AA33F24AD867D00D6EF4E /* FeedbackReduxViewController.swift in Sources */,
 				D0C9DCE924A8934F006CEFD3 /* DemoListViewController.swift in Sources */,
+				D01AA33E24AD867D00D6EF4E /* FeedbackReduxViewModel.swift in Sources */,
 				D015D38824AB158000E9839B /* Rx++.swift in Sources */,
 				D0E8CAA724A995F300A94935 /* FeedbackViewController.swift in Sources */,
 				D0E8CAA524A995F300A94935 /* FeedbackSection.swift in Sources */,
