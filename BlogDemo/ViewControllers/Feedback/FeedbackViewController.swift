@@ -21,7 +21,6 @@ final class FeedbackViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.keyboardDismissMode = .onDrag
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 48
         tableView.tableFooterView = UIView()
         tableView.register(FeedbackCell.self, forCellReuseIdentifier: "Cell")
         return tableView
@@ -31,9 +30,6 @@ final class FeedbackViewController: UIViewController {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Please enter some comments"
-        constrain(textField) { textField in
-            textField.height == 48
-        }
         return textField
     }()
 
@@ -125,8 +121,8 @@ final class FeedbackViewController: UIViewController {
     //MARK: - Setup UI
     private func setupUI() {
         title = "Feedback Form"
-        
         view.backgroundColor = .white
+
         let footerStack = UIStackView(arrangedSubviews: [commentTextField, errorLabel, submitButton])
         footerStack.spacing = 8
         footerStack.axis = .vertical
