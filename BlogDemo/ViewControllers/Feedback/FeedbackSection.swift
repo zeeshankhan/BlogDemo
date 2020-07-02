@@ -44,7 +44,7 @@ class FeedbackCoordinator: FeedbackCoordinatorType {
             Feedback(title: "App is amazing", acceptsComment: false),
             Feedback(title: "App needs improvement", acceptsComment: true),
             Feedback(title: "App is good but can be improved", acceptsComment: true),
-            Feedback(title: "App does not need any improvement", acceptsComment: false),
+            Feedback(title: "App does not need any improvement so no need to take comments either.", acceptsComment: false),
         ])
     }
     
