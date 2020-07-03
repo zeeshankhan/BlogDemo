@@ -29,6 +29,11 @@ public final class Toast {
             label.bottom == view.bottom - Constants.textBottomPadding
             label.top == view.safeAreaLayoutGuide.top
         }
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 0, height: 0.0)
+        view.layer.shadowRadius = 5
+        view.layer.masksToBounds = false
         return view
     }()
 
