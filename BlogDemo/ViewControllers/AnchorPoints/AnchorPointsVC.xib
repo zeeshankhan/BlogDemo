@@ -20,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bc-sg-QA2">
-                    <rect key="frame" x="0.0" y="44" width="414" height="600"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyr-sk-Qzd">
-                            <rect key="frame" x="10" y="10" width="394" height="580"/>
+                            <rect key="frame" x="10" y="10" width="394" height="832"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -32,7 +32,6 @@
                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="jyr-sk-Qzd" secondAttribute="trailing" constant="10" id="8Za-JT-Sb3"/>
-                        <constraint firstAttribute="height" constant="600" id="AO8-ma-2PE"/>
                         <constraint firstItem="jyr-sk-Qzd" firstAttribute="leading" secondItem="7Bc-sg-QA2" secondAttribute="leading" constant="10" id="B2O-rr-atW"/>
                         <constraint firstAttribute="bottom" secondItem="jyr-sk-Qzd" secondAttribute="bottom" constant="10" id="cLR-zM-7nu"/>
                         <constraint firstItem="jyr-sk-Qzd" firstAttribute="top" secondItem="7Bc-sg-QA2" secondAttribute="top" constant="10" id="jku-fH-TVs"/>
@@ -76,6 +75,7 @@
                 <constraint firstItem="0Gv-b5-k3b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Fjo-xe-sec"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YFk-lY-Rc0" secondAttribute="bottom" constant="50" id="FnJ-I9-VQk"/>
                 <constraint firstItem="7Bc-sg-QA2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gwb-0x-KeH"/>
+                <constraint firstAttribute="bottom" secondItem="7Bc-sg-QA2" secondAttribute="bottom" id="MPc-Ws-Ui3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m4F-sN-CiP" secondAttribute="trailing" constant="40" id="UcG-iu-Etl"/>
                 <constraint firstItem="YFk-lY-Rc0" firstAttribute="top" secondItem="0Gv-b5-k3b" secondAttribute="bottom" constant="20" id="Utb-ll-xwn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Bc-sg-QA2" secondAttribute="trailing" id="lKO-o2-UQI"/>
@@ -84,7 +84,7 @@
                 <constraint firstItem="HjX-g1-IMZ" firstAttribute="top" secondItem="m4F-sN-CiP" secondAttribute="bottom" constant="20" id="yMK-AW-fHe"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="-451" y="121"/>
         </view>
     </objects>
 </document>
