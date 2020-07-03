@@ -40,6 +40,7 @@ class DemoListViewController: UIViewController {
             "Bottom UITextField with UILayoutGuide",
             "Feedback form",
             "Feedback form with REDUX",
+            "Shadow Play",
         ]
         Observable<[String]>
             .just(items)
@@ -67,6 +68,8 @@ extension DemoListViewController: UITableViewDelegate {
                 navigationController?.pushViewController(FeedbackViewController(), animated: true)
             case 6:
                 navigationController?.pushViewController(FeedbackReduxViewController(), animated: true)
+            case 7:
+                present(ShadowPlayVC(nibName: "ShadowPlayVC", bundle: nil), animated: true, completion: nil)
             default:
                 return
         }
