@@ -5,7 +5,7 @@ private enum Constants {
     static let animationDuration: TimeInterval = 0.3
     static let font: UIFont = .systemFont(ofSize: 13, weight: .medium)
     static let textSidePadding: CGFloat = 8
-    static let textTopPadding: CGFloat = 4 /// Used when status bar shows location blue var
+    static let textTopPadding: CGFloat = 4
     static let textBottomPadding: CGFloat = 8
     static let defaultAnchorY: CGFloat = 0.5
     static let hiddenAnchorY: CGFloat = 1.5
@@ -87,7 +87,7 @@ private class ToastViewController: UIViewController {
             label.leading == view.leading + Constants.textSidePadding
             label.trailing == view.trailing - Constants.textSidePadding
             label.bottom == view.bottom - Constants.textBottomPadding
-            label.top == view.safeAreaLayoutGuide.top
+            label.top == view.safeAreaLayoutGuide.top + Constants.textTopPadding
         }
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 1
@@ -97,7 +97,15 @@ private class ToastViewController: UIViewController {
         return view
     }()
 
-    open override func loadView() {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        !(view.safeAreaInsets.top > 20)
+    }
+
+    override func loadView() {
         view = OverlayView()
     }
 
