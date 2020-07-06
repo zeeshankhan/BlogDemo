@@ -41,6 +41,7 @@ class DemoListViewController: UIViewController {
             "Feedback form",
             "Feedback form with REDUX",
             "Shadow Play",
+            "Image Text UIButton",
         ]
         Observable<[String]>
             .just(items)
@@ -70,6 +71,8 @@ extension DemoListViewController: UITableViewDelegate {
                 navigationController?.pushViewController(FeedbackReduxViewController(), animated: true)
             case 7:
                 present(ShadowPlayVC(nibName: "ShadowPlayVC", bundle: nil), animated: true, completion: nil)
+            case 8:
+                present(ImageTextButtonVC(), animated: true, completion: nil)
             default:
                 return
         }

@@ -24,6 +24,7 @@
 		D0C9DCE824A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */; };
 		D0C9DCE924A8934F006CEFD3 /* DemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCE524A8934F006CEFD3 /* DemoListViewController.swift */; };
 		D0C9DCF124A8A804006CEFD3 /* Notification++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C9DCF024A8A804006CEFD3 /* Notification++.swift */; };
+		D0DF8A0824B352A10089CF8F /* ImageTextButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF8A0724B352A10089CF8F /* ImageTextButtonVC.swift */; };
 		D0E1A087249C6BEB002F4670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1A086249C6BEB002F4670 /* AppDelegate.swift */; };
 		D0E1A090249C6BEE002F4670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E1A08F249C6BEE002F4670 /* Assets.xcassets */; };
 		D0E1A093249C6BEE002F4670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0E1A091249C6BEE002F4670 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTextFieldDemo2VC.swift; sourceTree = "<group>"; };
 		D0C9DCE524A8934F006CEFD3 /* DemoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoListViewController.swift; sourceTree = "<group>"; };
 		D0C9DCF024A8A804006CEFD3 /* Notification++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification++.swift"; sourceTree = "<group>"; };
+		D0DF8A0724B352A10089CF8F /* ImageTextButtonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTextButtonVC.swift; sourceTree = "<group>"; };
 		D0E1A083249C6BEB002F4670 /* BlogDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E1A086249C6BEB002F4670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0E1A08F249C6BEE002F4670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				D0C62A2724AC573100FA99D1 /* AnchorPointsVC.xib */,
 				D004434E24AEDFEE007800F2 /* ShadowPlayVC.swift */,
 				D004434F24AEDFEE007800F2 /* ShadowPlayVC.xib */,
+				D0DF8A0724B352A10089CF8F /* ImageTextButtonVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				D0C62A2824AC573100FA99D1 /* AnchorPointsVC.swift in Sources */,
 				D0C9DCE824A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift in Sources */,
 				D0C9DCE624A8934F006CEFD3 /* Toast.swift in Sources */,
+				D0DF8A0824B352A10089CF8F /* ImageTextButtonVC.swift in Sources */,
 				D0C9DCE724A8934F006CEFD3 /* BottomTextFieldDemoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
