@@ -26,3 +26,30 @@ extension ObservableConvertibleType {
         return asDriver(onErrorDriveWith: Driver.empty())
     }
 }
+
+public protocol OptionalType {
+    associatedtype Wrapped
+    var hasValue: Bool { get }
+    var content: Wrapped { get }
+}
+
+extension Optional: OptionalType {
+    public var hasValue: Bool {
+        switch self {
+            case .none:
+                return false
+            case .some:
+                return true
+        }
+    }
+    public var content: Wrapped {
+        return self!
+    }
+}
+
+extension ObservableType where Element: OptionalType {
+    /// Filters `nil` events, and emits unwrapped values.
+    public func unwrap() -> Observable<Element.Wrapped> {
+        return filter { $0.hasValue }.map { $0.content }
+    }
+}

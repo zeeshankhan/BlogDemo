@@ -7,7 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        Toast.shared.show(text: "Network Error")
+        //Toast.shared.show(text: "Network Error")
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()

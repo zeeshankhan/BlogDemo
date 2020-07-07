@@ -247,7 +247,7 @@ final class ButtonsView: UIView {
         super.init(frame: .zero)
 
         for button in [textButton, imageButton, bothButton] {
-            button.backgroundColor = .red
+            button.backgroundColor = .purple
             addSubview(button)
             button.translatesAutoresizingMaskIntoConstraints = false
             button.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true

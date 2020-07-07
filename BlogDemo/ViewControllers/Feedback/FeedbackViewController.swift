@@ -6,13 +6,16 @@ import RxCocoa
 import RxDataSources
 
 protocol FeedbackViewModelType {
+    /// Input
     var reasons: Driver<[FeedbackSection]> { get }
-    var selectFeedback: AnyObserver<FeedbackCellModel> { get }
-    var submit: AnyObserver<Void> { get }
     var isSubmitting: Driver<Bool> { get }
     var isErrorHidden: Driver<Bool> { get }
     var isCommentViewHidden: Driver<Bool> { get }
+    
+    /// Output
+    var selectFeedback: AnyObserver<FeedbackCellModel> { get }
     var comment: AnyObserver<String> { get }
+    var submit: AnyObserver<Void> { get }
 }
 
 final class FeedbackViewController: UIViewController {
