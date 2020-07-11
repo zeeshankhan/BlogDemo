@@ -15,11 +15,13 @@ class ShadowPlayVC: UIViewController {
     @IBOutlet weak var offsetHeight: UILabel!
     @IBOutlet weak var offsetWidth: UILabel!
     @IBOutlet weak var opacity: UILabel!
+    @IBOutlet weak var corner: UILabel!
     private var offset = CGSize(width: 0, height: 6.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        myView.layer.cornerRadius = 15.0
         myView.layer.shadowColor = UIColor.black.cgColor
         myView.layer.shadowOpacity = 1
         myView.layer.shadowOffset = offset
@@ -47,5 +49,10 @@ class ShadowPlayVC: UIViewController {
     @IBAction func opacityAction(_ sender: UISlider) {
         myView.layer.shadowOpacity = sender.value
         opacity.text = "Opacity[0-1]: \(String(format: "%.1f", sender.value))"
+    }
+
+    @IBAction func cornerRadiusAction(_ sender: UISlider) {
+        myView.layer.cornerRadius = CGFloat(sender.value)
+        corner.text = "CornerR[0-50]: \(String(format: "%.1f", sender.value))"
     }
 }
