@@ -16,11 +16,13 @@ class ShadowPlayVC: UIViewController {
     @IBOutlet weak var offsetWidth: UILabel!
     @IBOutlet weak var opacity: UILabel!
     @IBOutlet weak var corner: UILabel!
+    @IBOutlet weak var shadowPathCRadius: UILabel!
     private var offset = CGSize(width: 0, height: 6.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        myView.layer.shadowPath = nil
         myView.layer.cornerRadius = 15.0
         myView.layer.shadowColor = UIColor.black.cgColor
         myView.layer.shadowOpacity = 1
@@ -53,6 +55,11 @@ class ShadowPlayVC: UIViewController {
 
     @IBAction func cornerRadiusAction(_ sender: UISlider) {
         myView.layer.cornerRadius = CGFloat(sender.value)
-        corner.text = "CornerR[0-50]: \(String(format: "%.1f", sender.value))"
+        corner.text = "CornerRadius: \(String(format: "%.1f", sender.value))"
+    }
+
+    @IBAction func shadowPathCRadiusAction(_ sender: UISlider) {
+        myView.layer.shadowPath = sender.value > 0 ? UIBezierPath(roundedRect: myView.bounds, cornerRadius: CGFloat(sender.value)).cgPath : nil
+        shadowPathCRadius.text = "ShadowPathCornerR: \(String(format: "%.1f", sender.value))"
     }
 }
