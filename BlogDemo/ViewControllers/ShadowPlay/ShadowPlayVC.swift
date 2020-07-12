@@ -18,12 +18,13 @@ class ShadowPlayVC: UIViewController {
     @IBOutlet weak var corner: UILabel!
     @IBOutlet weak var shadowPathCRadius: UILabel!
     private var offset = CGSize(width: 0, height: 6.0)
+    private var cornerRadius = CGFloat(0.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         myView.layer.shadowPath = nil
-        myView.layer.cornerRadius = 15.0
+        myView.layer.cornerRadius = cornerRadius
         myView.layer.shadowColor = UIColor.black.cgColor
         myView.layer.shadowOpacity = 1
         myView.layer.shadowOffset = offset
@@ -33,33 +34,35 @@ class ShadowPlayVC: UIViewController {
 
     @IBAction func radiusAction(_ sender: UISlider) {
         myView.layer.shadowRadius = CGFloat(sender.value)
-        radius.text = "Radius [0-50]: \(Int(sender.value))"
+        radius.text = "ShadowRadius: \(Int(sender.value))"
     }
     
     @IBAction func offsetHeightAction(_ sender: UISlider) {
         offset.height = CGFloat(sender.value)
-        offsetHeight.text = "OffsetH [0-10]: \(Int(sender.value))"
+        offsetHeight.text = "OffsetH: \(Int(sender.value))"
         myView.layer.shadowOffset = offset
     }
 
     @IBAction func offsetWidthAction(_ sender: UISlider) {
         offset.width = CGFloat(sender.value)
-        offsetWidth.text = "OffsetW [0-100]: \(Int(sender.value))"
+        offsetWidth.text = "OffsetW: \(Int(sender.value))"
         myView.layer.shadowOffset = offset
     }
 
     @IBAction func opacityAction(_ sender: UISlider) {
         myView.layer.shadowOpacity = sender.value
-        opacity.text = "Opacity[0-1]: \(String(format: "%.1f", sender.value))"
+        opacity.text = "Opacity: \(String(format: "%.1f", sender.value))"
     }
 
     @IBAction func cornerRadiusAction(_ sender: UISlider) {
-        myView.layer.cornerRadius = CGFloat(sender.value)
-        corner.text = "CornerRadius: \(String(format: "%.1f", sender.value))"
+        cornerRadius = CGFloat(sender.value)
+        myView.layer.cornerRadius = cornerRadius
+        corner.text = "CornerRadius: \(String(format: "%.1f", cornerRadius))"
     }
 
     @IBAction func shadowPathCRadiusAction(_ sender: UISlider) {
         myView.layer.shadowPath = sender.value > 0 ? UIBezierPath(roundedRect: myView.bounds, cornerRadius: CGFloat(sender.value)).cgPath : nil
-        shadowPathCRadius.text = "ShadowPathCornerR: \(String(format: "%.1f", sender.value))"
+        shadowPathCRadius.text = "ShadPathCornerR: \(String(format: "%.1f", sender.value))"
     }
+
 }
