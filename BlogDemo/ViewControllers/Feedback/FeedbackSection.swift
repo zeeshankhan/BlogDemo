@@ -49,6 +49,6 @@ class FeedbackCoordinator: FeedbackCoordinatorType {
     }
     
     func submit(reason: Feedback, comment: String) -> Completable {
-        Observable<Void>.empty().ignoreElements()
+        Observable<Never>.empty().asCompletable()
     }
 }

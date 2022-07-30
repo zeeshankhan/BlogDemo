@@ -257,6 +257,8 @@ final class ButtonsView: UIView {
         bothButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         imageButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8).isActive = true
 
+        bothButton.layer.cornerRadius = bothButton.frame.height / 2
+
         for button in [imageButton, bothButton] {
             button.setImage(UIImage(systemName: "star"), for: .normal)
             button.tintColor = .white

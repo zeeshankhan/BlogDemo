@@ -1,52 +1,50 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Action",
-        "repositoryURL": "https://github.com/RxSwiftCommunity/Action",
-        "state": {
-          "branch": null,
-          "revision": "1079e557787a3ffe88f833eb5f637dcf1396421b",
-          "version": "4.1.0"
-        }
-      },
-      {
-        "package": "Cartography",
-        "repositoryURL": "https://github.com/robb/Cartography",
-        "state": {
-          "branch": null,
-          "revision": "b75197ea134f42b5feafb04b526b37eb1a41034b",
-          "version": "4.0.0"
-        }
-      },
-      {
-        "package": "RxDataSources",
-        "repositoryURL": "https://github.com/RxSwiftCommunity/RxDataSources",
-        "state": {
-          "branch": null,
-          "revision": "a18cee01c9ee55f04d0c7eb15c77a96c3648c88e",
-          "version": "4.0.1"
-        }
-      },
-      {
-        "package": "RxSwift",
-        "repositoryURL": "https://github.com/ReactiveX/RxSwift",
-        "state": {
-          "branch": null,
-          "revision": "002d325b0bdee94e7882e1114af5ff4fe1e96afa",
-          "version": "5.1.1"
-        }
-      },
-      {
-        "package": "TinyConstraints",
-        "repositoryURL": "https://github.com/roberthein/TinyConstraints",
-        "state": {
-          "branch": null,
-          "revision": "f413ea53b886de81b925eeb37a14538fe6ae4912",
-          "version": "4.0.1"
-        }
+  "pins" : [
+    {
+      "identity" : "action",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/Action",
+      "state" : {
+        "revision" : "55f5da064fd66cb09acde22cbbb744fe7f6355aa",
+        "version" : "5.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "cartography",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/robb/Cartography",
+      "state" : {
+        "revision" : "b75197ea134f42b5feafb04b526b37eb1a41034b",
+        "version" : "4.0.0"
+      }
+    },
+    {
+      "identity" : "rxdatasources",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxDataSources",
+      "state" : {
+        "revision" : "90c29b48b628479097fe775ed1966d75ac374518",
+        "version" : "5.0.2"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift",
+      "state" : {
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
+      }
+    },
+    {
+      "identity" : "tinyconstraints",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/roberthein/TinyConstraints",
+      "state" : {
+        "revision" : "3262e5c591d4ab6272255df2087a01bbebd138dc",
+        "version" : "4.0.2"
+      }
+    }
+  ],
+  "version" : 2
 }

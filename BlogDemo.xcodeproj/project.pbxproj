@@ -12,6 +12,10 @@
 		D015D38824AB158000E9839B /* Rx++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D015D38724AB158000E9839B /* Rx++.swift */; };
 		D01AA33E24AD867D00D6EF4E /* FeedbackReduxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AA33C24AD867D00D6EF4E /* FeedbackReduxViewModel.swift */; };
 		D01AA33F24AD867D00D6EF4E /* FeedbackReduxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01AA33D24AD867D00D6EF4E /* FeedbackReduxViewController.swift */; };
+		D03DD6582894CAEA00863670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D03DD6572894CAEA00863670 /* Main.storyboard */; };
+		D0501ECB2894C73B0098BCF2 /* RectangleFromDiagonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501ECA2894C73B0098BCF2 /* RectangleFromDiagonal.swift */; };
+		D0501ECD2894C7F10098BCF2 /* TwoLabelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501ECC2894C7F10098BCF2 /* TwoLabelsVC.swift */; };
+		D0501ECF2894C8CE0098BCF2 /* ImageLoaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0501ECE2894C8CE0098BCF2 /* ImageLoaderVC.swift */; };
 		D0AE3C8D249F0CA200C1DBFF /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8C249F0CA200C1DBFF /* RxDataSources */; };
 		D0AE3C8F249F0CA200C1DBFF /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C8E249F0CA200C1DBFF /* Differentiator */; };
 		D0AE3C95249F13A400C1DBFF /* TinyConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = D0AE3C94249F13A400C1DBFF /* TinyConstraints */; };
@@ -42,6 +46,10 @@
 		D015D38724AB158000E9839B /* Rx++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx++.swift"; sourceTree = "<group>"; };
 		D01AA33C24AD867D00D6EF4E /* FeedbackReduxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackReduxViewModel.swift; sourceTree = "<group>"; };
 		D01AA33D24AD867D00D6EF4E /* FeedbackReduxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackReduxViewController.swift; sourceTree = "<group>"; };
+		D03DD6572894CAEA00863670 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D0501ECA2894C73B0098BCF2 /* RectangleFromDiagonal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleFromDiagonal.swift; sourceTree = "<group>"; };
+		D0501ECC2894C7F10098BCF2 /* TwoLabelsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoLabelsVC.swift; sourceTree = "<group>"; };
+		D0501ECE2894C8CE0098BCF2 /* ImageLoaderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoaderVC.swift; sourceTree = "<group>"; };
 		D0C62A2624AC573100FA99D1 /* AnchorPointsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnchorPointsVC.swift; path = AnchorPoints/AnchorPointsVC.swift; sourceTree = "<group>"; };
 		D0C62A2724AC573100FA99D1 /* AnchorPointsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AnchorPointsVC.xib; path = AnchorPoints/AnchorPointsVC.xib; sourceTree = "<group>"; };
 		D0C9DCE124A8934F006CEFD3 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -91,8 +99,11 @@
 		D0C9DCE224A8934F006CEFD3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D0C9DCF224A8A8E4006CEFD3 /* Feedback */,
 				D0C9DCE524A8934F006CEFD3 /* DemoListViewController.swift */,
+				D0501ECE2894C8CE0098BCF2 /* ImageLoaderVC.swift */,
+				D0501ECC2894C7F10098BCF2 /* TwoLabelsVC.swift */,
+				D0501ECA2894C73B0098BCF2 /* RectangleFromDiagonal.swift */,
+				D0C9DCF224A8A8E4006CEFD3 /* Feedback */,
 				D0C9DCE324A8934F006CEFD3 /* BottomTextFieldDemoVC.swift */,
 				D0C9DCE424A8934F006CEFD3 /* BottomTextFieldDemo2VC.swift */,
 				D0C62A2624AC573100FA99D1 /* AnchorPointsVC.swift */,
@@ -100,6 +111,7 @@
 				D004434E24AEDFEE007800F2 /* ShadowPlayVC.swift */,
 				D004434F24AEDFEE007800F2 /* ShadowPlayVC.xib */,
 				D0DF8A0724B352A10089CF8F /* ImageTextButtonVC.swift */,
+				D03DD6572894CAEA00863670 /* Main.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +243,7 @@
 			files = (
 				D0E1A093249C6BEE002F4670 /* LaunchScreen.storyboard in Resources */,
 				D0C62A2924AC573100FA99D1 /* AnchorPointsVC.xib in Resources */,
+				D03DD6582894CAEA00863670 /* Main.storyboard in Resources */,
 				D004435124AEDFEE007800F2 /* ShadowPlayVC.xib in Resources */,
 				D0E1A090249C6BEE002F4670 /* Assets.xcassets in Resources */,
 			);
@@ -246,12 +259,15 @@
 				D0E1A087249C6BEB002F4670 /* AppDelegate.swift in Sources */,
 				D0E8CAA624A995F300A94935 /* FeedbackCell.swift in Sources */,
 				D01AA33F24AD867D00D6EF4E /* FeedbackReduxViewController.swift in Sources */,
+				D0501ECB2894C73B0098BCF2 /* RectangleFromDiagonal.swift in Sources */,
 				D0C9DCE924A8934F006CEFD3 /* DemoListViewController.swift in Sources */,
 				D01AA33E24AD867D00D6EF4E /* FeedbackReduxViewModel.swift in Sources */,
 				D015D38824AB158000E9839B /* Rx++.swift in Sources */,
+				D0501ECD2894C7F10098BCF2 /* TwoLabelsVC.swift in Sources */,
 				D0E8CAA724A995F300A94935 /* FeedbackViewController.swift in Sources */,
 				D0E8CAA524A995F300A94935 /* FeedbackSection.swift in Sources */,
 				D0C9DCF124A8A804006CEFD3 /* Notification++.swift in Sources */,
+				D0501ECF2894C8CE0098BCF2 /* ImageLoaderVC.swift in Sources */,
 				D004435024AEDFEE007800F2 /* ShadowPlayVC.swift in Sources */,
 				D0E8CAA424A995F300A94935 /* FeedbackViewModel.swift in Sources */,
 				D0C62A2824AC573100FA99D1 /* AnchorPointsVC.swift in Sources */,
@@ -456,7 +472,7 @@
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.1;
+				minimumVersion = 5.0.2;
 			};
 		};
 		D0AE3C93249F13A400C1DBFF /* XCRemoteSwiftPackageReference "TinyConstraints" */ = {
@@ -464,7 +480,7 @@
 			repositoryURL = "https://github.com/roberthein/TinyConstraints";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.1;
+				minimumVersion = 4.0.0;
 			};
 		};
 		D0C9DCDB24A892CC006CEFD3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
@@ -472,7 +488,7 @@
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.1;
+				minimumVersion = 6.5.0;
 			};
 		};
 		D0E8711A24A61E1C0001861C /* XCRemoteSwiftPackageReference "Cartography" */ = {
@@ -488,7 +504,7 @@
 			repositoryURL = "https://github.com/RxSwiftCommunity/Action";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.0;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -21,6 +21,8 @@ class DemoListViewController: UIViewController {
         super.viewDidLoad()
         bindViewModels()
         setupUI()
+
+        tableView(listTableView, didSelectRowAt: IndexPath(row: 10, section: 0))
     }
 
     private func setupUI() {
@@ -36,12 +38,15 @@ class DemoListViewController: UIViewController {
             "Show Toast",
             "Hide Toast",
             "Anchor Points",
+            "Rectangle from Diagonal",
             "Bottom UITextField Keyboard Handling",
             "Bottom UITextField with UILayoutGuide",
             "Feedback form",
             "Feedback form with REDUX",
             "Shadow Play",
             "Image Text UIButton",
+            "Two Labels",
+            "Image Loader",
         ]
         Observable<[String]>
             .just(items)
@@ -55,26 +60,34 @@ class DemoListViewController: UIViewController {
 extension DemoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-            case 0:
-                Toast.shared.show(text: "Ea voluptatibus a illo doloremque reiciendis nemo et earum. Molestiae totam voluptatibus nobis et deleniti dolores. Animi quasi ut voluptatem autem magni. Et voluptas repudiandae unde. Non sapiente maxime voluptas et facere enim.")
-            case 1:
-                Toast.shared.hide()
-            case 2:
-                present(AnchorPointsVC(nibName: "AnchorPointsVC", bundle: nil), animated: true, completion: nil)
-            case 3:
-                navigationController?.pushViewController(BottomTextFieldDemoVC(), animated: true)
-            case 4:
-                navigationController?.pushViewController(BottomTextFieldDemo2VC(), animated: true)
-            case 5:
-                navigationController?.pushViewController(FeedbackViewController(), animated: true)
-            case 6:
-                navigationController?.pushViewController(FeedbackReduxViewController(), animated: true)
-            case 7:
-                present(ShadowPlayVC(nibName: "ShadowPlayVC", bundle: nil), animated: true, completion: nil)
-            case 8:
-                present(ImageTextButtonVC(), animated: true, completion: nil)
-            default:
-                return
+        case 0:
+            Toast.shared.show(text: "Ea voluptatibus a illo doloremque reiciendis nemo et earum. Molestiae totam voluptatibus nobis et deleniti dolores. Animi quasi ut voluptatem autem magni. Et voluptas repudiandae unde. Non sapiente maxime voluptas et facere enim.")
+        case 1:
+            Toast.shared.hide()
+        case 2:
+            present(AnchorPointsVC(nibName: "AnchorPointsVC", bundle: nil), animated: true, completion: nil)
+        case 3:
+            navigationController?.pushViewController(RectangleFromDiagonal(), animated: true)
+        case 4:
+            navigationController?.pushViewController(BottomTextFieldDemoVC(), animated: true)
+        case 5:
+            navigationController?.pushViewController(BottomTextFieldDemo2VC(), animated: true)
+        case 6:
+            navigationController?.pushViewController(FeedbackViewController(), animated: true)
+        case 7:
+            navigationController?.pushViewController(FeedbackReduxViewController(), animated: true)
+        case 8:
+            present(ShadowPlayVC(nibName: "ShadowPlayVC", bundle: nil), animated: true, completion: nil)
+        case 9:
+            present(ImageTextButtonVC(), animated: true, completion: nil)
+        case 10:
+            navigationController?.pushViewController(TwoLabelsVC(), animated: true)
+        case 11:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let imageLoaderVC = storyboard.instantiateViewController(withIdentifier: "ImageLoaderVC") as! ImageLoaderVC
+            navigationController?.pushViewController(imageLoaderVC, animated: true)
+        default:
+            return
         }
     }
 }
