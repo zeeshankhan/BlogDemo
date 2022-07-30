@@ -34,28 +34,27 @@ extension URLSession: NetworkService {
 
 class DataFetcher {
     typealias Completion = (Data?) -> Void
-
+    private static let defaultNetwork = URLSession(
+        configuration: URLSessionConfiguration.default,
+        delegate: nil,
+        delegateQueue: OperationQueue.main)
     private let networkService: NetworkService
-    private var cache = NSCache<NSURL, NSData>()
+    private var cache = NSCache<NSURL, NSData>() /// It clears data when resources become limited.
     private var runningRequests = [URL: NetworkCancellable]()
     private var loadingResponses = [URL: [Completion]]()
 
-    init(networkService: NetworkService = URLSession(configuration: URLSessionConfiguration.default,
-                                                     delegate: nil,
-                                                     delegateQueue: OperationQueue.main)) {
+    init(networkService: NetworkService = DataFetcher.defaultNetwork) {
         self.networkService = networkService
     }
 
     func fetchData(_ url: URL, _ completion: @escaping Completion) {
-        let nsurl = url as NSURL
-
-        /// Check for a cached image.
-        if let object = cache.object(forKey: nsurl) {
+        /// Check for a cached data.
+        if let object = cache.object(forKey: url as NSURL) {
             completion(object as Data)
             return
         }
 
-        /// In case there are more than one requestor for the image, we append their completion block.
+        /// Keep completion blocks for similar request
         loadingResponses[url, default: []].append(completion)
 
         /// If request is already running for same url, do not make another request
@@ -63,30 +62,24 @@ class DataFetcher {
             return
         }
 
-        let task = networkService.fetch(url) { [weak self] result in
+        runningRequests[url] = networkService.fetch(url) { [weak self] result in
             guard let self = self else { return }
 
-            defer {
-                self.runningRequests[url] = nil
-                self.loadingResponses[url] = nil
+            let data = try? result.get()
+            if let data = data { /// Cache the data when not nil
+                self.cache.setObject(data as NSData, forKey: url as NSURL)
             }
-
-            guard let data = try? result.get(),
-                  let blocks = self.loadingResponses[url]
-            else {
-                completion(nil)
-                return
-            }
-            /// Cache the data
-            self.cache.setObject(data as NSData, forKey: nsurl)
 
             /// Iterate over each requestor for the data and pass it back.
+            let blocks = self.loadingResponses[url, default: []]
             for block in blocks {
                 block(data)
             }
-        }
 
-        runningRequests[url] = task
+            /// Clear
+            self.runningRequests[url] = nil
+            self.loadingResponses[url] = nil
+        }
     }
 
     func cancel(url: URL) {
@@ -119,7 +112,7 @@ class ImageLoaderVC: UIViewController, UITableViewDataSource {
 
     private lazy var urls: [URL] = {
         var paths = [URL]()
-        for i in 1...1000 {
+        for i in 1...10000 {
             paths.append(URL(string: "https://picsum.photos/seed/\(i)/150")!)
         }
         return paths
